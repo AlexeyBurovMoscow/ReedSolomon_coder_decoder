@@ -1,0 +1,283 @@
+ -- Copyright (C) 1991-2008 Altera Corporation
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, Altera MegaCore Function License 
+ -- Agreement, or other applicable license agreement, including, 
+ -- without limitation, that your use is for the sole purpose of 
+ -- programming logic devices manufactured by Altera and sold by 
+ -- Altera or its authorized distributors.  Please refer to the 
+ -- applicable agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ------------------------------------------------------------------------------
+
+
+
+ ------------------------------------------------------------------------------
+ -- NC         : No Connect. This pin has no internal connection to the device.
+ -- VCC_INT    : Dedicated power pin, which MUST be connected to VCC  (5.0V).
+ -- VCC_IO     : Dedicated power pin, which MUST be connected to VCC  (Refer to
+ --              the table below for voltage).
+ -- GND        : Dedicated ground pin, which MUST be connected to GND.
+ -- GND+       : Unused input. This pin should be connected to GND. It may also
+ --              be connected  to a  valid signal  on the board  (low, high, or
+ --              toggling)  if that signal is required for a different revision
+ --              of the design.
+ -- GND*       : Unused  I/O  pin.   This pin can either be left unconnected or
+ --              connected to GND.  Connecting this pin to GND will improve the
+ --              device's immunity to noise.
+ ------------------------------------------------------------------------------
+
+
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+CHIP  "RS_11_15_coder_decoder_refactored"  ASSIGNED TO AN: EPF10K50RC240-3
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+TCK                          : 1         : input  :                   :         :           :                
+CONF_DONE                    : 2         : bidir  :                   :         :           :                
+nCEO                         : 3         : output :                   :         :           :                
+TDO                          : 4         : output :                   :         :           :                
+VCC_INT                      : 5         : power  :                   : 5.0V    :           :                
+multip_to_xor_1              : 6         : output : TTL               :         :           : N              
+galua_XOR_ena                : 7         : output : TTL               :         :           : N              
+multip_to_xor_3              : 8         : output : TTL               :         :           : N              
+Total_errors1                : 9         : output : TTL               :         :           : N              
+GND_INT                      : 10        : gnd    :                   :         :           :                
+Data_source_end_of_work      : 11        : output : TTL               :         :           : N              
+syndrome_2_3                 : 12        : output : TTL               :         :           : N              
+Main_RAM_ADR2                : 13        : output : TTL               :         :           : N              
+GND*                         : 14        :        :                   :         :           :                
+GND*                         : 15        :        :                   :         :           :                
+VCC_INT                      : 16        : power  :                   : 5.0V    :           :                
+GND*                         : 17        :        :                   :         :           :                
+GND*                         : 18        :        :                   :         :           :                
+POS_ERR_0_3                  : 19        : output : TTL               :         :           : N              
+GND*                         : 20        :        :                   :         :           :                
+GND*                         : 21        :        :                   :         :           :                
+GND_INT                      : 22        : gnd    :                   :         :           :                
+ERR_AMPLY_1_2                : 23        : output : TTL               :         :           : N              
+POS_ERR_1_1                  : 24        : output : TTL               :         :           : N              
+ERR_AMPLY_1_1                : 25        : output : TTL               :         :           : N              
+POS_ERR_1_0                  : 26        : output : TTL               :         :           : N              
+VCC_INT                      : 27        : power  :                   : 5.0V    :           :                
+GND*                         : 28        :        :                   :         :           :                
+SYNDROME_3                   : 29        : output : TTL               :         :           : N              
+GND*                         : 30        :        :                   :         :           :                
+GND*                         : 31        :        :                   :         :           :                
+GND_INT                      : 32        : gnd    :                   :         :           :                
+syndrome_3_1                 : 33        : output : TTL               :         :           : N              
+syndrome_3_2                 : 34        : output : TTL               :         :           : N              
+syndrome_3_0                 : 35        : output : TTL               :         :           : N              
+SYNDROME_2                   : 36        : output : TTL               :         :           : N              
+VCC_INT                      : 37        : power  :                   : 5.0V    :           :                
+GND*                         : 38        :        :                   :         :           :                
+Decoded_data1                : 39        : output : TTL               :         :           : N              
+RAM_to_mult2                 : 40        : output : TTL               :         :           : N              
+GND*                         : 41        :        :                   :         :           :                
+GND_INT                      : 42        : gnd    :                   :         :           :                
+GND*                         : 43        :        :                   :         :           :                
+GND*                         : 44        :        :                   :         :           :                
+GND*                         : 45        :        :                   :         :           :                
+ERR_AMPLY_0_1                : 46        : output : TTL               :         :           : N              
+VCC_INT                      : 47        : power  :                   : 5.0V    :           :                
+GND*                         : 48        :        :                   :         :           :                
+syndrome_1_3                 : 49        : output : TTL               :         :           : N              
+RS_encoder_data3             : 50        : output : TTL               :         :           : N              
+Data_source_out1             : 51        : output : TTL               :         :           : N              
+GND_INT                      : 52        : gnd    :                   :         :           :                
+Main_RAM_wr                  : 53        : output : TTL               :         :           : N              
+Done                         : 54        : output : TTL               :         :           : N              
+syndrome_1_2                 : 55        : output : TTL               :         :           : N              
+syndrome_0_0                 : 56        : output : TTL               :         :           : N              
+VCC_INT                      : 57        : power  :                   : 5.0V    :           :                
+TMS                          : 58        : input  :                   :         :           :                
+TRST                         : 59        : input  :                   :         :           :                
+nSTATUS                      : 60        : bidir  :                   :         :           :                
+GND*                         : 61        :        :                   :         :           :                
+GND*                         : 62        :        :                   :         :           :                
+POS_ERR_0_1                  : 63        : output : TTL               :         :           : N              
+GND*                         : 64        :        :                   :         :           :                
+GND*                         : 65        :        :                   :         :           :                
+GND*                         : 66        :        :                   :         :           :                
+KILL_AMPLY_2                 : 67        : output : TTL               :         :           : N              
+KILL_AMPLY_1                 : 68        : output : TTL               :         :           : N              
+GND_INT                      : 69        : gnd    :                   :         :           :                
+GND*                         : 70        :        :                   :         :           :                
+GND*                         : 71        :        :                   :         :           :                
+GND*                         : 72        :        :                   :         :           :                
+GND*                         : 73        :        :                   :         :           :                
+GND*                         : 74        :        :                   :         :           :                
+GND*                         : 75        :        :                   :         :           :                
+GND*                         : 76        :        :                   :         :           :                
+VCC_INT                      : 77        : power  :                   : 5.0V    :           :                
+KILL_AMPLY_0                 : 78        : output : TTL               :         :           : N              
+SYNDROME_1                   : 79        : output : TTL               :         :           : N              
+syndrome_0_1                 : 80        : output : TTL               :         :           : N              
+GND*                         : 81        :        :                   :         :           :                
+GND*                         : 82        :        :                   :         :           :                
+GND*                         : 83        :        :                   :         :           :                
+repair_enable                : 84        : output : TTL               :         :           : N              
+GND_INT                      : 85        : gnd    :                   :         :           :                
+GND*                         : 86        :        :                   :         :           :                
+ERR_AMPLY_0_3                : 87        : output : TTL               :         :           : N              
+ERR_AMPLY_1_0                : 88        : output : TTL               :         :           : N              
+VCC_INT                      : 89        : power  :                   : 5.0V    :           :                
+GND+                         : 90        :        :                   :         :           :                
+in_clk                       : 91        : input  : TTL               :         :           : N              
+GND+                         : 92        :        :                   :         :           :                
+GND_INT                      : 93        : gnd    :                   :         :           :                
+GND*                         : 94        :        :                   :         :           :                
+GND*                         : 95        :        :                   :         :           :                
+VCC_INT                      : 96        : power  :                   : 5.0V    :           :                
+GND*                         : 97        :        :                   :         :           :                
+GND*                         : 98        :        :                   :         :           :                
+GND*                         : 99        :        :                   :         :           :                
+GND*                         : 100       :        :                   :         :           :                
+GND*                         : 101       :        :                   :         :           :                
+GND*                         : 102       :        :                   :         :           :                
+Decoder_end_of_work          : 103       : output : TTL               :         :           : N              
+GND_INT                      : 104       : gnd    :                   :         :           :                
+GND*                         : 105       :        :                   :         :           :                
+GND*                         : 106       :        :                   :         :           :                
+GND*                         : 107       :        :                   :         :           :                
+GND*                         : 108       :        :                   :         :           :                
+GND*                         : 109       :        :                   :         :           :                
+Data_source_out2             : 110       : output : TTL               :         :           : N              
+GND*                         : 111       :        :                   :         :           :                
+VCC_INT                      : 112       : power  :                   : 5.0V    :           :                
+MULTY_FACTOR_3               : 113       : output : TTL               :         :           : N              
+syndrome_2_2                 : 114       : output : TTL               :         :           : N              
+MULTY_FACTOR_2               : 115       : output : TTL               :         :           : N              
+GND*                         : 116       :        :                   :         :           :                
+GND*                         : 117       :        :                   :         :           :                
+GND*                         : 118       :        :                   :         :           :                
+GND*                         : 119       :        :                   :         :           :                
+GND*                         : 120       :        :                   :         :           :                
+nCONFIG                      : 121       : input  :                   :         :           :                
+VCC_INT                      : 122       : power  :                   : 5.0V    :           :                
+MSEL1                        : 123       : input  :                   :         :           :                
+MSEL0                        : 124       : input  :                   :         :           :                
+GND_INT                      : 125       : gnd    :                   :         :           :                
+ERR_AMPLY_0_0                : 126       : output : TTL               :         :           : N              
+MULTY_FACTOR_1               : 127       : output : TTL               :         :           : N              
+syndrome_0_2                 : 128       : output : TTL               :         :           : N              
+syndrome_0_3                 : 129       : output : TTL               :         :           : N              
+VCC_INT                      : 130       : power  :                   : 5.0V    :           :                
+RS_encoder_data0             : 131       : output : TTL               :         :           : N              
+Data_source_out3             : 132       : output : TTL               :         :           : N              
+ERROR_IN_AIR                 : 133       : output : TTL               :         :           : N              
+RS_encoder_data1             : 134       : output : TTL               :         :           : N              
+GND_INT                      : 135       : gnd    :                   :         :           :                
+syndrome_1_1                 : 136       : output : TTL               :         :           : N              
+GND*                         : 137       :        :                   :         :           :                
+RS_Encoder_end_work          : 138       : output : TTL               :         :           : N              
+tab1_ena                     : 139       : output : TTL               :         :           : N              
+VCC_INT                      : 140       : power  :                   : 5.0V    :           :                
+RAM_to_mult0                 : 141       : output : TTL               :         :           : N              
+Decoded_data3                : 142       : output : TTL               :         :           : N              
+Decoded_data2                : 143       : output : TTL               :         :           : N              
+Decoded_data0                : 144       : output : TTL               :         :           : N              
+GND_INT                      : 145       : gnd    :                   :         :           :                
+syndrome_ram_ADR_1           : 146       : output : TTL               :         :           : N              
+syndrome_3_3                 : 147       : output : TTL               :         :           : N              
+syndrome_ram_ADR_0           : 148       : output : TTL               :         :           : N              
+MULTY_FACTOR_0               : 149       : output : TTL               :         :           : N              
+VCC_INT                      : 150       : power  :                   : 5.0V    :           :                
+GND*                         : 151       :        :                   :         :           :                
+RS_Encoder_broken_data0      : 152       : output : TTL               :         :           : N              
+RS_Encoder_broken_data2      : 153       : output : TTL               :         :           : N              
+RS_Encoder_broken_data3      : 154       : output : TTL               :         :           : N              
+GND_INT                      : 155       : gnd    :                   :         :           :                
+POS_ERR_0_0                  : 156       : output : TTL               :         :           : N              
+ERR_AMPLY_1_3                : 157       : output : TTL               :         :           : N              
+tab2_ena                     : 158       : output : TTL               :         :           : N              
+POS_ERR_1_3                  : 159       : output : TTL               :         :           : N              
+VCC_INT                      : 160       : power  :                   : 5.0V    :           :                
+GND*                         : 161       :        :                   :         :           :                
+GND*                         : 162       :        :                   :         :           :                
+Main_RAM_ADR3                : 163       : output : TTL               :         :           : N              
+GND*                         : 164       :        :                   :         :           :                
+GND_INT                      : 165       : gnd    :                   :         :           :                
+GND*                         : 166       :        :                   :         :           :                
+RS_Decoder_start             : 167       : output : TTL               :         :           : N              
+syndrome_ram_RD              : 168       : output : TTL               :         :           : N              
+GND*                         : 169       :        :                   :         :           :                
+VCC_INT                      : 170       : power  :                   : 5.0V    :           :                
+GND*                         : 171       :        :                   :         :           :                
+multip_to_xor_2              : 172       : output : TTL               :         :           : N              
+Total_errors0                : 173       : output : TTL               :         :           : N              
+multip_to_xor_0              : 174       : output : TTL               :         :           : N              
+Decoder_error                : 175       : output : TTL               :         :           : N              
+GND_INT                      : 176       : gnd    :                   :         :           :                
+TDI                          : 177       : input  :                   :         :           :                
+nCE                          : 178       : input  :                   :         :           :                
+DCLK                         : 179       : bidir  :                   :         :           :                
+DATA0                        : 180       : input  :                   :         :           :                
+GND*                         : 181       :        :                   :         :           :                
+cut_tail                     : 182       : output : TTL               :         :           : N              
+Main_RAM_rd                  : 183       : output : TTL               :         :           : N              
+GND*                         : 184       :        :                   :         :           :                
+GND*                         : 185       :        :                   :         :           :                
+syndrome_2_1                 : 186       : output : TTL               :         :           : N              
+GND*                         : 187       :        :                   :         :           :                
+syndrome_2_0                 : 188       : output : TTL               :         :           : N              
+VCC_INT                      : 189       : power  :                   : 5.0V    :           :                
+syndrome_ram_WE              : 190       : output : TTL               :         :           : N              
+Start_locator                : 191       : output : TTL               :         :           : N              
+Data_source_out0             : 192       : output : TTL               :         :           : N              
+RS_encoder_data2             : 193       : output : TTL               :         :           : N              
+RS_Encoder_broken_data1      : 194       : output : TTL               :         :           : N              
+GND*                         : 195       :        :                   :         :           :                
+GND*                         : 196       :        :                   :         :           :                
+GND_INT                      : 197       : gnd    :                   :         :           :                
+GND*                         : 198       :        :                   :         :           :                
+GND*                         : 199       :        :                   :         :           :                
+GND*                         : 200       :        :                   :         :           :                
+GND*                         : 201       :        :                   :         :           :                
+GND*                         : 202       :        :                   :         :           :                
+POS_ERR_1_2                  : 203       : output : TTL               :         :           : N              
+GND*                         : 204       :        :                   :         :           :                
+VCC_INT                      : 205       : power  :                   : 5.0V    :           :                
+Main_RAM_ADR0                : 206       : output : TTL               :         :           : N              
+Main_RAM_ADR1                : 207       : output : TTL               :         :           : N              
+GND*                         : 208       :        :                   :         :           :                
+GND*                         : 209       :        :                   :         :           :                
+GND+                         : 210       :        :                   :         :           :                
+DS_start_impulse             : 211       : input  : TTL               :         :           : N              
+GND+                         : 212       :        :                   :         :           :                
+GND*                         : 213       :        :                   :         :           :                
+GND*                         : 214       :        :                   :         :           :                
+GND*                         : 215       :        :                   :         :           :                
+GND_INT                      : 216       : gnd    :                   :         :           :                
+ERR_AMPLY_0_2                : 217       : output : TTL               :         :           : N              
+GND*                         : 218       :        :                   :         :           :                
+syndrome_1_0                 : 219       : output : TTL               :         :           : N              
+RAM_to_mult1                 : 220       : output : TTL               :         :           : N              
+GND*                         : 221       :        :                   :         :           :                
+RAM_to_mult3                 : 222       : output : TTL               :         :           : N              
+GND*                         : 223       :        :                   :         :           :                
+VCC_INT                      : 224       : power  :                   : 5.0V    :           :                
+POS_ERR_0_2                  : 225       : output : TTL               :         :           : N              
+GND*                         : 226       :        :                   :         :           :                
+SYNDROME_0                   : 227       : output : TTL               :         :           : N              
+GND*                         : 228       :        :                   :         :           :                
+GND*                         : 229       :        :                   :         :           :                
+GND*                         : 230       :        :                   :         :           :                
+GND*                         : 231       :        :                   :         :           :                
+GND_INT                      : 232       : gnd    :                   :         :           :                
+KILL_AMPLY_3                 : 233       : output : TTL               :         :           : N              
+GND*                         : 234       :        :                   :         :           :                
+kill_error                   : 235       : output : TTL               :         :           : N              
+GND*                         : 236       :        :                   :         :           :                
+GND*                         : 237       :        :                   :         :           :                
+GND*                         : 238       :        :                   :         :           :                
+GND*                         : 239       :        :                   :         :           :                
+GND*                         : 240       :        :                   :         :           :                

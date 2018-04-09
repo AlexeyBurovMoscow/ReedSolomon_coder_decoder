@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 22.900 ns
+From           : RS_Decoder:inst5|D_CONTROLLER:dec_controller|MR_WE_0
+To             : Main_RAM_wr
+From Clock     : in_clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'in_clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.68 MHz ( period = 271.500 ns )
+From           : RS_Decoder:inst5|SYNDROME_RAM:syndrome_memory|Data_out1[1]
+To             : RS_Decoder:inst5|RS_Locator:rsloc|v1[3]
+From Clock     : in_clk
+To Clock       : in_clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

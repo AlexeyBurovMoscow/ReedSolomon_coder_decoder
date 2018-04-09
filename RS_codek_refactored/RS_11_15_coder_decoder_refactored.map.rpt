@@ -1,0 +1,1178 @@
+Analysis & Synthesis report for RS_11_15_coder_decoder_refactored
+Tue Apr 12 15:04:26 2016
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Registers Removed During Synthesis
+  8. General Register Statistics
+  9. Source assignments for RS_Decoder:inst1|PROC_XOR:decoderXOR|lpm_counter:i_rtl_0
+ 10. Source assignments for Err_Module:inst11|lpm_add_sub:Add0|addcore:adder
+ 11. Source assignments for RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder
+ 12. Source assignments for RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder
+ 13. Source assignments for RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2|addcore:adder
+ 14. Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|PROC_XOR:decoderXOR|lpm_counter:i_rtl_0
+ 15. Parameter Settings for Inferred Entity Instance: Err_Module:inst11|lpm_add_sub:Add0
+ 16. Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod1
+ 17. Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0
+ 18. Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1
+ 19. Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0
+ 20. Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2
+ 21. Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod2
+ 22. Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod3
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                          ;
++-----------------------------+-----------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Apr 12 15:04:26 2016   ;
+; Quartus II Version          ; 8.1 Build 163 10/28/2008 SJ Web Edition ;
+; Revision Name               ; RS_11_15_coder_decoder_refactored       ;
+; Top-level Entity Name       ; schema                                  ;
+; Family                      ; FLEX10K                                 ;
+; Total logic elements        ; 2,356                                   ;
+; Total pins                  ; 76                                      ;
+; Total memory bits           ; 0                                       ;
++-----------------------------+-----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                     ;
++----------------------------------------------------------------+--------------+-----------------------------------+
+; Option                                                         ; Setting      ; Default Value                     ;
++----------------------------------------------------------------+--------------+-----------------------------------+
+; Top-level entity name                                          ; schema       ; RS_11_15_coder_decoder_refactored ;
+; Family name                                                    ; FLEX10K      ; Stratix II                        ;
+; Use Generated Physical Constraints File                        ; Off          ;                                   ;
+; Use smart compilation                                          ; Off          ; Off                               ;
+; Create Debugging Nodes for IP Cores                            ; Off          ; Off                               ;
+; Preserve fewer node names                                      ; On           ; On                                ;
+; Disable OpenCore Plus hardware evaluation                      ; Off          ; Off                               ;
+; Verilog Version                                                ; Verilog_2001 ; Verilog_2001                      ;
+; VHDL Version                                                   ; VHDL93       ; VHDL93                            ;
+; State Machine Processing                                       ; Auto         ; Auto                              ;
+; Safe State Machine                                             ; Off          ; Off                               ;
+; Extract Verilog State Machines                                 ; On           ; On                                ;
+; Extract VHDL State Machines                                    ; On           ; On                                ;
+; Ignore Verilog initial constructs                              ; Off          ; Off                               ;
+; Iteration limit for constant Verilog loops                     ; 5000         ; 5000                              ;
+; Iteration limit for non-constant Verilog loops                 ; 250          ; 250                               ;
+; Add Pass-Through Logic to Inferred RAMs                        ; On           ; On                                ;
+; Parallel Synthesis                                             ; Off          ; Off                               ;
+; NOT Gate Push-Back                                             ; On           ; On                                ;
+; Power-Up Don't Care                                            ; On           ; On                                ;
+; Remove Redundant Logic Cells                                   ; Off          ; Off                               ;
+; Remove Duplicate Registers                                     ; On           ; On                                ;
+; Ignore CARRY Buffers                                           ; Off          ; Off                               ;
+; Ignore CASCADE Buffers                                         ; Off          ; Off                               ;
+; Ignore GLOBAL Buffers                                          ; Off          ; Off                               ;
+; Ignore ROW GLOBAL Buffers                                      ; Off          ; Off                               ;
+; Ignore LCELL Buffers                                           ; Off          ; Off                               ;
+; Ignore SOFT Buffers                                            ; On           ; On                                ;
+; Limit AHDL Integers to 32 Bits                                 ; Off          ; Off                               ;
+; Auto Implement in ROM                                          ; Off          ; Off                               ;
+; Optimization Technique                                         ; Area         ; Area                              ;
+; Carry Chain Length                                             ; 32           ; 32                                ;
+; Cascade Chain Length                                           ; 2            ; 2                                 ;
+; Auto Carry Chains                                              ; On           ; On                                ;
+; Auto Open-Drain Pins                                           ; On           ; On                                ;
+; Auto ROM Replacement                                           ; On           ; On                                ;
+; Auto RAM Replacement                                           ; On           ; On                                ;
+; Auto Clock Enable Replacement                                  ; On           ; On                                ;
+; Strict RAM Replacement                                         ; Off          ; Off                               ;
+; Auto Resource Sharing                                          ; Off          ; Off                               ;
+; Allow Any RAM Size For Recognition                             ; Off          ; Off                               ;
+; Allow Any ROM Size For Recognition                             ; Off          ; Off                               ;
+; Use LogicLock Constraints during Resource Balancing            ; On           ; On                                ;
+; Ignore translate_off and synthesis_off directives              ; Off          ; Off                               ;
+; Show Parameter Settings Tables in Synthesis Report             ; On           ; On                                ;
+; HDL message level                                              ; Level2       ; Level2                            ;
+; Suppress Register Optimization Related Messages                ; Off          ; Off                               ;
+; Number of Removed Registers Reported in Synthesis Report       ; 100          ; 100                               ;
+; Number of Inverted Registers Reported in Synthesis Report      ; 100          ; 100                               ;
+; Block Design Naming                                            ; Auto         ; Auto                              ;
+; Synthesis Effort                                               ; Auto         ; Auto                              ;
+; Allows Asynchronous Clear Usage For Shift Register Replacement ; On           ; On                                ;
+; Analysis & Synthesis Message Level                             ; Medium       ; Medium                            ;
++----------------------------------------------------------------+--------------+-----------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                           ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------+
+; data_source.v                    ; yes             ; User Verilog HDL File              ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/data_source.v               ;
+; schema.bdf                       ; yes             ; User Block Diagram/Schematic File  ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/schema.bdf                  ;
+; RS_Encoder.v                     ; yes             ; User Verilog HDL File              ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/RS_Encoder.v                ;
+; clk_devider.v                    ; yes             ; User Verilog HDL File              ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/clk_devider.v               ;
+; Gain.v                           ; yes             ; User Verilog HDL File              ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/Gain.v                      ;
+; RS_Decoder.v                     ; yes             ; User Verilog HDL File              ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/RS_Decoder.v                ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/lpm_counter.tdf         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/lpm_constant.inc        ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/lpm_decode.inc          ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;
+; cmpconst.inc                     ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/cmpconst.inc            ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/lpm_compare.inc         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/lpm_counter.inc         ;
+; dffeea.inc                       ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/dffeea.inc              ;
+; alt_synch_counter.inc            ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/alt_synch_counter.inc   ;
+; alt_synch_counter_f.inc          ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/alt_synch_counter_f.inc ;
+; alt_counter_f10ke.inc            ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/alt_counter_f10ke.inc   ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/alt_counter_stratix.inc ;
+; aglobal81.inc                    ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/aglobal81.inc           ;
+; alt_counter_f10ke.tdf            ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/alt_counter_f10ke.tdf   ;
+; flex10ke_lcell.inc               ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/flex10ke_lcell.inc      ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;
+; addcore.inc                      ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/addcore.inc             ;
+; look_add.inc                     ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/look_add.inc            ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/bypassff.inc            ;
+; altshift.inc                     ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/altshift.inc            ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;
+; alt_mercury_add_sub.inc          ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/alt_mercury_add_sub.inc ;
+; addcore.tdf                      ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/addcore.tdf             ;
+; a_csnbuffer.inc                  ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/a_csnbuffer.inc         ;
+; a_csnbuffer.tdf                  ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/a_csnbuffer.tdf         ;
+; altshift.tdf                     ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/altshift.tdf            ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/lpm_divide.tdf          ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/abs_divider.inc         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; d:/altera_quartusii/quartus8_1/quartus/libraries/megafunctions/sign_div_unsign.inc     ;
+; db/lpm_divide_ipl.tdf            ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/lpm_divide_ipl.tdf       ;
+; db/sign_div_unsign_4kh.tdf       ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/sign_div_unsign_4kh.tdf  ;
+; db/alt_u_div_ake.tdf             ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/alt_u_div_ake.tdf        ;
+; db/add_sub_a9c.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_a9c.tdf          ;
+; db/add_sub_b9c.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_b9c.tdf          ;
+; db/add_sub_c9c.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_c9c.tdf          ;
+; db/add_sub_d9c.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_d9c.tdf          ;
+; db/add_sub_e9c.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_e9c.tdf          ;
+; db/lpm_divide_bao.tdf            ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/lpm_divide_bao.tdf       ;
+; db/abs_divider_0dg.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/abs_divider_0dg.tdf      ;
+; db/alt_u_div_cqe.tdf             ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/alt_u_div_cqe.tdf        ;
+; db/add_sub_rac.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_rac.tdf          ;
+; db/add_sub_sac.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_sac.tdf          ;
+; db/add_sub_tac.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_tac.tdf          ;
+; db/add_sub_uac.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_uac.tdf          ;
+; db/add_sub_vac.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_vac.tdf          ;
+; db/add_sub_0bc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_0bc.tdf          ;
+; db/add_sub_1bc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_1bc.tdf          ;
+; db/add_sub_2bc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_2bc.tdf          ;
+; db/add_sub_3bc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_3bc.tdf          ;
+; db/add_sub_4bc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_4bc.tdf          ;
+; db/add_sub_5bc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_5bc.tdf          ;
+; db/add_sub_6bc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_6bc.tdf          ;
+; db/add_sub_7bc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_7bc.tdf          ;
+; db/add_sub_8bc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_8bc.tdf          ;
+; db/add_sub_9bc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_9bc.tdf          ;
+; db/add_sub_abc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_abc.tdf          ;
+; db/add_sub_bbc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_bbc.tdf          ;
+; db/add_sub_cbc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_cbc.tdf          ;
+; db/add_sub_dbc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_dbc.tdf          ;
+; db/add_sub_ebc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_ebc.tdf          ;
+; db/add_sub_fbc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_fbc.tdf          ;
+; db/add_sub_gbc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_gbc.tdf          ;
+; db/add_sub_f9c.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_f9c.tdf          ;
+; db/add_sub_g9c.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_g9c.tdf          ;
+; db/add_sub_h9c.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_h9c.tdf          ;
+; db/add_sub_i9c.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_i9c.tdf          ;
+; db/add_sub_qac.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_qac.tdf          ;
+; db/lpm_abs_sg9.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/lpm_abs_sg9.tdf          ;
+; db/add_sub_l2f.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/db/add_sub_l2f.tdf          ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++-----------------------------------+---------+
+; Resource                          ; Usage   ;
++-----------------------------------+---------+
+; Total logic elements              ; 2356    ;
+; Total combinational functions     ; 2268    ;
+;     -- Total 4-input functions    ; 1382    ;
+;     -- Total 3-input functions    ; 409     ;
+;     -- Total 2-input functions    ; 331     ;
+;     -- Total 1-input functions    ; 135     ;
+;     -- Total 0-input functions    ; 11      ;
+; Total registers                   ; 416     ;
+; Total logic cells in carry chains ; 153     ;
+; I/O pins                          ; 76      ;
+; Maximum fan-out node              ; in_clk  ;
+; Maximum fan-out                   ; 412     ;
+; Total fan-out                     ; 8514    ;
+; Average fan-out                   ; 3.50    ;
++-----------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                   ;
++-----------------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                    ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                                             ; Library Name ;
++-----------------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |schema                                       ; 2356 (0)    ; 416          ; 0           ; 76   ; 1940 (0)     ; 88 (0)            ; 328 (0)          ; 153 (0)         ; 0 (0)      ; |schema                                                                                                                                                         ; work         ;
+;    |Data_Source:inst|                         ; 21 (21)     ; 11           ; 0           ; 0    ; 10 (10)      ; 4 (4)             ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |schema|Data_Source:inst                                                                                                                                        ; work         ;
+;    |Err_Module:inst11|                        ; 144 (113)   ; 45           ; 0           ; 0    ; 99 (68)      ; 33 (33)           ; 12 (12)          ; 31 (0)          ; 0 (0)      ; |schema|Err_Module:inst11                                                                                                                                       ; work         ;
+;       |lpm_add_sub:Add0|                      ; 31 (0)      ; 0            ; 0           ; 0    ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 31 (0)          ; 0 (0)      ; |schema|Err_Module:inst11|lpm_add_sub:Add0                                                                                                                      ; work         ;
+;          |addcore:adder|                      ; 31 (1)      ; 0            ; 0           ; 0    ; 31 (1)       ; 0 (0)             ; 0 (0)            ; 31 (1)          ; 0 (0)      ; |schema|Err_Module:inst11|lpm_add_sub:Add0|addcore:adder                                                                                                        ; work         ;
+;             |a_csnbuffer:result_node|         ; 30 (30)     ; 0            ; 0           ; 0    ; 30 (30)      ; 0 (0)             ; 0 (0)            ; 30 (30)         ; 0 (0)      ; |schema|Err_Module:inst11|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node                                                                                ; work         ;
+;    |RS_Decoder:inst1|                         ; 2142 (0)    ; 331          ; 0           ; 0    ; 1811 (0)     ; 50 (0)            ; 281 (0)          ; 122 (0)         ; 0 (0)      ; |schema|RS_Decoder:inst1                                                                                                                                        ; work         ;
+;       |DTRIGGER:Trig0|                        ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|DTRIGGER:Trig0                                                                                                                         ; work         ;
+;       |DTRIGGER:Trig1|                        ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|DTRIGGER:Trig1                                                                                                                         ; work         ;
+;       |DTRIGGER:Trig2|                        ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|DTRIGGER:Trig2                                                                                                                         ; work         ;
+;       |DTRIGGER:Trig3|                        ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|DTRIGGER:Trig3                                                                                                                         ; work         ;
+;       |DTRIGGER:Trig4|                        ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|DTRIGGER:Trig4                                                                                                                         ; work         ;
+;       |DTRIGGER:Trig5|                        ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|DTRIGGER:Trig5                                                                                                                         ; work         ;
+;       |DTRIGGER:Trig6|                        ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|DTRIGGER:Trig6                                                                                                                         ; work         ;
+;       |DTRIGGER:Trig7|                        ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|DTRIGGER:Trig7                                                                                                                         ; work         ;
+;       |D_CONTROLLER:dec_controller|           ; 295 (295)   ; 50           ; 0           ; 0    ; 245 (245)    ; 2 (2)             ; 48 (48)          ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|D_CONTROLLER:dec_controller                                                                                                            ; work         ;
+;       |MAIN_RAM:main_RAM|                     ; 204 (204)   ; 68           ; 0           ; 0    ; 136 (136)    ; 0 (0)             ; 68 (68)          ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|MAIN_RAM:main_RAM                                                                                                                      ; work         ;
+;       |MULTIPLYER_GALUA:decode_multiplier|    ; 51 (51)     ; 4            ; 0           ; 0    ; 47 (47)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|MULTIPLYER_GALUA:decode_multiplier                                                                                                     ; work         ;
+;       |PROC_XOR:decoderXOR|                   ; 61 (29)     ; 48           ; 0           ; 0    ; 13 (13)      ; 0 (0)             ; 48 (16)          ; 32 (0)          ; 0 (0)      ; |schema|RS_Decoder:inst1|PROC_XOR:decoderXOR                                                                                                                    ; work         ;
+;          |lpm_counter:i_rtl_0|                ; 32 (0)      ; 32           ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 32 (0)           ; 32 (0)          ; 0 (0)      ; |schema|RS_Decoder:inst1|PROC_XOR:decoderXOR|lpm_counter:i_rtl_0                                                                                                ; work         ;
+;             |alt_counter_f10ke:wysi_counter|  ; 32 (32)     ; 32           ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 32 (32)         ; 0 (0)      ; |schema|RS_Decoder:inst1|PROC_XOR:decoderXOR|lpm_counter:i_rtl_0|alt_counter_f10ke:wysi_counter                                                                 ; work         ;
+;       |RS_Locator:rsloc|                      ; 1479 (1098) ; 113          ; 0           ; 0    ; 1366 (985)   ; 40 (40)           ; 73 (73)          ; 90 (0)          ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc                                                                                                                       ; work         ;
+;          |lpm_add_sub:Add0|                   ; 10 (0)      ; 0            ; 0           ; 0    ; 10 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0                                                                                                      ; work         ;
+;             |addcore:adder|                   ; 10 (0)      ; 0            ; 0           ; 0    ; 10 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder                                                                                        ; work         ;
+;                |a_csnbuffer:result_node|      ; 10 (10)     ; 0            ; 0           ; 0    ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node                                                                ; work         ;
+;          |lpm_add_sub:Add1|                   ; 13 (0)      ; 0            ; 0           ; 0    ; 13 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1                                                                                                      ; work         ;
+;             |addcore:adder|                   ; 13 (1)      ; 0            ; 0           ; 0    ; 13 (1)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder                                                                                        ; work         ;
+;                |a_csnbuffer:result_node|      ; 12 (12)     ; 0            ; 0           ; 0    ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node                                                                ; work         ;
+;          |lpm_add_sub:Add2|                   ; 4 (0)       ; 0            ; 0           ; 0    ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 4 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2                                                                                                      ; work         ;
+;             |addcore:adder|                   ; 4 (1)       ; 0            ; 0           ; 0    ; 4 (1)        ; 0 (0)             ; 0 (0)            ; 4 (1)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2|addcore:adder                                                                                        ; work         ;
+;                |a_csnbuffer:result_node|      ; 3 (3)       ; 0            ; 0           ; 0    ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 3 (3)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node                                                                ; work         ;
+;          |lpm_divide:Mod0|                    ; 334 (0)     ; 0            ; 0           ; 0    ; 334 (0)      ; 0 (0)             ; 0 (0)            ; 69 (0)          ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0                                                                                                       ; work         ;
+;             |lpm_divide_bao:auto_generated|   ; 334 (0)     ; 0            ; 0           ; 0    ; 334 (0)      ; 0 (0)             ; 0 (0)            ; 69 (0)          ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated                                                                         ; work         ;
+;                |abs_divider_0dg:divider|      ; 334 (0)     ; 0            ; 0           ; 0    ; 334 (0)      ; 0 (0)             ; 0 (0)            ; 69 (0)          ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider                                                 ; work         ;
+;                   |add_sub_l2f:compl_add_rem| ; 4 (4)       ; 0            ; 0           ; 0    ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 4 (4)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|add_sub_l2f:compl_add_rem                       ; work         ;
+;                   |alt_u_div_cqe:divider|     ; 319 (136)   ; 0            ; 0           ; 0    ; 319 (136)    ; 0 (0)             ; 0 (0)            ; 65 (0)          ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider                           ; work         ;
+;                      |add_sub_dbc:add_sub_28| ; 58 (58)     ; 0            ; 0           ; 0    ; 58 (58)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28    ; work         ;
+;                      |add_sub_ebc:add_sub_29| ; 60 (60)     ; 0            ; 0           ; 0    ; 60 (60)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29    ; work         ;
+;                      |add_sub_fbc:add_sub_30| ; 32 (32)     ; 0            ; 0           ; 0    ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 32 (32)         ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_fbc:add_sub_30    ; work         ;
+;                      |add_sub_gbc:add_sub_31| ; 33 (33)     ; 0            ; 0           ; 0    ; 33 (33)      ; 0 (0)             ; 0 (0)            ; 33 (33)         ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_gbc:add_sub_31    ; work         ;
+;                   |lpm_abs_sg9:my_abs_num|    ; 11 (11)     ; 0            ; 0           ; 0    ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num                          ; work         ;
+;          |lpm_divide:Mod1|                    ; 10 (0)      ; 0            ; 0           ; 0    ; 10 (0)       ; 0 (0)             ; 0 (0)            ; 7 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod1                                                                                                       ; work         ;
+;             |lpm_divide_ipl:auto_generated|   ; 10 (0)      ; 0            ; 0           ; 0    ; 10 (0)       ; 0 (0)             ; 0 (0)            ; 7 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod1|lpm_divide_ipl:auto_generated                                                                         ; work         ;
+;                |sign_div_unsign_4kh:divider|  ; 10 (0)      ; 0            ; 0           ; 0    ; 10 (0)       ; 0 (0)             ; 0 (0)            ; 7 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod1|lpm_divide_ipl:auto_generated|sign_div_unsign_4kh:divider                                             ; work         ;
+;                   |alt_u_div_ake:divider|     ; 10 (3)      ; 0            ; 0           ; 0    ; 10 (3)       ; 0 (0)             ; 0 (0)            ; 7 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod1|lpm_divide_ipl:auto_generated|sign_div_unsign_4kh:divider|alt_u_div_ake:divider                       ; work         ;
+;                      |add_sub_d9c:add_sub_3|  ; 5 (5)       ; 0            ; 0           ; 0    ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod1|lpm_divide_ipl:auto_generated|sign_div_unsign_4kh:divider|alt_u_div_ake:divider|add_sub_d9c:add_sub_3 ; work         ;
+;                      |add_sub_e9c:add_sub_4|  ; 2 (2)       ; 0            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 2 (2)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod1|lpm_divide_ipl:auto_generated|sign_div_unsign_4kh:divider|alt_u_div_ake:divider|add_sub_e9c:add_sub_4 ; work         ;
+;          |lpm_divide:Mod2|                    ; 5 (0)       ; 0            ; 0           ; 0    ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 5 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod2                                                                                                       ; work         ;
+;             |lpm_divide_bao:auto_generated|   ; 5 (0)       ; 0            ; 0           ; 0    ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 5 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod2|lpm_divide_bao:auto_generated                                                                         ; work         ;
+;                |abs_divider_0dg:divider|      ; 5 (0)       ; 0            ; 0           ; 0    ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 5 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod2|lpm_divide_bao:auto_generated|abs_divider_0dg:divider                                                 ; work         ;
+;                   |alt_u_div_cqe:divider|     ; 5 (0)       ; 0            ; 0           ; 0    ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 5 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod2|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider                           ; work         ;
+;                      |add_sub_gbc:add_sub_31| ; 5 (5)       ; 0            ; 0           ; 0    ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod2|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_gbc:add_sub_31    ; work         ;
+;          |lpm_divide:Mod3|                    ; 5 (0)       ; 0            ; 0           ; 0    ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 5 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod3                                                                                                       ; work         ;
+;             |lpm_divide_bao:auto_generated|   ; 5 (0)       ; 0            ; 0           ; 0    ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 5 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod3|lpm_divide_bao:auto_generated                                                                         ; work         ;
+;                |abs_divider_0dg:divider|      ; 5 (0)       ; 0            ; 0           ; 0    ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 5 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod3|lpm_divide_bao:auto_generated|abs_divider_0dg:divider                                                 ; work         ;
+;                   |alt_u_div_cqe:divider|     ; 5 (0)       ; 0            ; 0           ; 0    ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 5 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod3|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider                           ; work         ;
+;                      |add_sub_gbc:add_sub_31| ; 5 (5)       ; 0            ; 0           ; 0    ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |schema|RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod3|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_gbc:add_sub_31    ; work         ;
+;       |SYNDROME_RAM:syndrome_memory|          ; 36 (36)     ; 32           ; 0           ; 0    ; 4 (4)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|SYNDROME_RAM:syndrome_memory                                                                                                           ; work         ;
+;       |TABLE:tab1|                            ; 4 (4)       ; 4            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|TABLE:tab1                                                                                                                             ; work         ;
+;       |TABLE:tab2|                            ; 4 (4)       ; 4            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Decoder:inst1|TABLE:tab2                                                                                                                             ; work         ;
+;    |RS_Encoder:inst3|                         ; 49 (0)      ; 29           ; 0           ; 0    ; 20 (0)       ; 1 (0)             ; 28 (0)           ; 0 (0)           ; 0 (0)      ; |schema|RS_Encoder:inst3                                                                                                                                        ; work         ;
+;       |CONTROLLER:controller|                 ; 24 (24)     ; 9            ; 0           ; 0    ; 15 (15)      ; 1 (1)             ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Encoder:inst3|CONTROLLER:controller                                                                                                                  ; work         ;
+;       |DATA_MPX:DataMultiplexor|              ; 4 (4)       ; 0            ; 0           ; 0    ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Encoder:inst3|DATA_MPX:DataMultiplexor                                                                                                               ; work         ;
+;       |FOUR_BIT_REGISTER:four_bit_reg_1|      ; 4 (4)       ; 4            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Encoder:inst3|FOUR_BIT_REGISTER:four_bit_reg_1                                                                                                       ; work         ;
+;       |FOUR_BIT_REGISTER:four_bit_reg_2|      ; 4 (4)       ; 4            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Encoder:inst3|FOUR_BIT_REGISTER:four_bit_reg_2                                                                                                       ; work         ;
+;       |FOUR_BIT_REGISTER:four_bit_reg_3|      ; 4 (4)       ; 4            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Encoder:inst3|FOUR_BIT_REGISTER:four_bit_reg_3                                                                                                       ; work         ;
+;       |FOUR_BIT_REGISTER:four_bit_reg_4|      ; 4 (4)       ; 4            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Encoder:inst3|FOUR_BIT_REGISTER:four_bit_reg_4                                                                                                       ; work         ;
+;       |GATE:Gate|                             ; 4 (4)       ; 4            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Encoder:inst3|GATE:Gate                                                                                                                              ; work         ;
+;       |MULTIPLIER_x15:Multiplier_x15|         ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |schema|RS_Encoder:inst3|MULTIPLIER_x15:Multiplier_x15                                                                                                          ; work         ;
++-----------------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                       ;
++-----------------------------------------------------------+--------------------------------------------------------------+
+; Register name                                             ; Reason for Removal                                           ;
++-----------------------------------------------------------+--------------------------------------------------------------+
+; Err_Module:inst11|i[5..31]                                ; Stuck at GND due to stuck port data_in                       ;
+; RS_Encoder:inst3|CONTROLLER:controller|i[4..31]           ; Stuck at GND due to stuck port data_in                       ;
+; Data_Source:inst|i[4..31]                                 ; Stuck at GND due to stuck port data_in                       ;
+; RS_Decoder:inst1|RS_Locator:rsloc|state[4,8..31]          ; Stuck at GND due to stuck port data_in                       ;
+; RS_Decoder:inst1|D_CONTROLLER:dec_controller|i[8..31]     ; Stuck at GND due to stuck port data_in                       ;
+; RS_Decoder:inst1|D_CONTROLLER:dec_controller|SR_ADR[2..3] ; Lost fanout                                                  ;
+; RS_Decoder:inst1|D_CONTROLLER:dec_controller|T2E          ; Merged with RS_Decoder:inst1|D_CONTROLLER:dec_controller|T1E ;
+; Total Number of Removed Registers = 135                   ;                                                              ;
++-----------------------------------------------------------+--------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 416   ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 217   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------+
+; Source assignments for RS_Decoder:inst1|PROC_XOR:decoderXOR|lpm_counter:i_rtl_0 ;
++---------------------------+-------+------+--------------------------------------+
+; Assignment                ; Value ; From ; To                                   ;
++---------------------------+-------+------+--------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                                    ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                                    ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                                    ;
++---------------------------+-------+------+--------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Source assignments for Err_Module:inst11|lpm_add_sub:Add0|addcore:adder ;
++---------------------------+-------+------+------------------------------+
+; Assignment                ; Value ; From ; To                           ;
++---------------------------+-------+------+------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -                            ;
++---------------------------+-------+------+------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Source assignments for RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder ;
++---------------------------+-------+------+----------------------------------------------+
+; Assignment                ; Value ; From ; To                                           ;
++---------------------------+-------+------+----------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -                                            ;
++---------------------------+-------+------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Source assignments for RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder ;
++---------------------------+-------+------+----------------------------------------------+
+; Assignment                ; Value ; From ; To                                           ;
++---------------------------+-------+------+----------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -                                            ;
++---------------------------+-------+------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Source assignments for RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2|addcore:adder ;
++---------------------------+-------+------+----------------------------------------------+
+; Assignment                ; Value ; From ; To                                           ;
++---------------------------+-------+------+----------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -                                            ;
++---------------------------+-------+------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|PROC_XOR:decoderXOR|lpm_counter:i_rtl_0 ;
++------------------------+-------------------+--------------------------------------------------------------+
+; Parameter Name         ; Value             ; Type                                                         ;
++------------------------+-------------------+--------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                                               ;
+; LPM_WIDTH              ; 32                ; Untyped                                                      ;
+; LPM_DIRECTION          ; UP                ; Untyped                                                      ;
+; LPM_MODULUS            ; 0                 ; Untyped                                                      ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                                                      ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                                                      ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                                                      ;
+; DEVICE_FAMILY          ; FLEX10K           ; Untyped                                                      ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                                                      ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                                           ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                                           ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                                                      ;
+; LABWIDE_SCLR           ; ON                ; Untyped                                                      ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                                                      ;
+; CBXI_PARAMETER         ; NOTHING           ; Untyped                                                      ;
++------------------------+-------------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Err_Module:inst11|lpm_add_sub:Add0 ;
++------------------------+-------------+----------------------------------------------+
+; Parameter Name         ; Value       ; Type                                         ;
++------------------------+-------------+----------------------------------------------+
+; LPM_WIDTH              ; 32          ; Untyped                                      ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                      ;
+; LPM_DIRECTION          ; ADD         ; Untyped                                      ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                      ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 1           ; Untyped                                      ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                      ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                           ;
+; DEVICE_FAMILY          ; FLEX10K     ; Untyped                                      ;
+; USE_WYS                ; OFF         ; Untyped                                      ;
+; STYLE                  ; FAST        ; Untyped                                      ;
+; CBXI_PARAMETER         ; add_sub_soh ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                               ;
++------------------------+-------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod1 ;
++------------------------+----------------+----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                     ;
++------------------------+----------------+----------------------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                                  ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_ipl ; Untyped                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 1              ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                           ;
++------------------------+----------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0 ;
++------------------------+-------------+--------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                         ;
++------------------------+-------------+--------------------------------------------------------------+
+; LPM_WIDTH              ; 7           ; Untyped                                                      ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                      ;
+; LPM_DIRECTION          ; ADD         ; Untyped                                                      ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                      ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                                      ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                                      ;
+; OPTIMIZE_FOR_SPEED     ; 1           ; Untyped                                                      ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                                      ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                      ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                           ;
+; DEVICE_FAMILY          ; FLEX10K     ; Untyped                                                      ;
+; USE_WYS                ; OFF         ; Untyped                                                      ;
+; STYLE                  ; FAST        ; Untyped                                                      ;
+; CBXI_PARAMETER         ; add_sub_09h ; Untyped                                                      ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                               ;
++------------------------+-------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1 ;
++------------------------+-------------+--------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                         ;
++------------------------+-------------+--------------------------------------------------------------+
+; LPM_WIDTH              ; 8           ; Untyped                                                      ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                      ;
+; LPM_DIRECTION          ; ADD         ; Untyped                                                      ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                      ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                                      ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                                      ;
+; OPTIMIZE_FOR_SPEED     ; 1           ; Untyped                                                      ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                                      ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                      ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                           ;
+; DEVICE_FAMILY          ; FLEX10K     ; Untyped                                                      ;
+; USE_WYS                ; OFF         ; Untyped                                                      ;
+; STYLE                  ; FAST        ; Untyped                                                      ;
+; CBXI_PARAMETER         ; add_sub_lch ; Untyped                                                      ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                               ;
++------------------------+-------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                     ;
++------------------------+----------------+----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                  ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                  ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                                  ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                  ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_bao ; Untyped                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 1              ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                           ;
++------------------------+----------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2 ;
++------------------------+-------------+--------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                         ;
++------------------------+-------------+--------------------------------------------------------------+
+; LPM_WIDTH              ; 4           ; Untyped                                                      ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                      ;
+; LPM_DIRECTION          ; ADD         ; Untyped                                                      ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                      ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                                      ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                                      ;
+; OPTIMIZE_FOR_SPEED     ; 1           ; Untyped                                                      ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                                      ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                      ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                           ;
+; DEVICE_FAMILY          ; FLEX10K     ; Untyped                                                      ;
+; USE_WYS                ; OFF         ; Untyped                                                      ;
+; STYLE                  ; FAST        ; Untyped                                                      ;
+; CBXI_PARAMETER         ; add_sub_njh ; Untyped                                                      ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                               ;
++------------------------+-------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod2 ;
++------------------------+----------------+----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                     ;
++------------------------+----------------+----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                  ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                  ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                                  ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                  ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_bao ; Untyped                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 1              ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                           ;
++------------------------+----------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod3 ;
++------------------------+----------------+----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                     ;
++------------------------+----------------+----------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                  ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                  ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                                  ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                  ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_bao ; Untyped                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 1              ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                           ;
++------------------------+----------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
+    Info: Processing started: Tue Apr 12 15:04:17 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RS_11_15_coder_decoder_refactored -c RS_11_15_coder_decoder_refactored
+Info: Found 1 design units, including 1 entities, in source file data_source.v
+    Info: Found entity 1: Data_Source
+Info: Found 1 design units, including 1 entities, in source file schema.bdf
+    Info: Found entity 1: schema
+Info: Found 10 design units, including 10 entities, in source file RS_Encoder.v
+    Info: Found entity 1: RS_Encoder
+    Info: Found entity 2: CONTROLLER
+    Info: Found entity 3: CLK_INVERTOR
+    Info: Found entity 4: FOUR_BIT_REGISTER
+    Info: Found entity 5: GALUA_ADDER
+    Info: Found entity 6: MULTIPLIER_x3
+    Info: Found entity 7: MULTIPLIER_x12
+    Info: Found entity 8: MULTIPLIER_x15
+    Info: Found entity 9: GATE
+    Info: Found entity 10: DATA_MPX
+Info: Found 1 design units, including 1 entities, in source file clk_devider.v
+    Info: Found entity 1: clk_devider
+Info: Found 1 design units, including 1 entities, in source file Gain.v
+    Info: Found entity 1: Err_Module
+Warning (10275): Verilog HDL Module Instantiation warning at RS_Decoder.v(276): ignored dangling comma in List of Port Connections
+Warning (10275): Verilog HDL Module Instantiation warning at RS_Decoder.v(284): ignored dangling comma in List of Port Connections
+Info: Found 9 design units, including 9 entities, in source file RS_Decoder.v
+    Info: Found entity 1: RS_Decoder
+    Info: Found entity 2: D_CONTROLLER
+    Info: Found entity 3: MAIN_RAM
+    Info: Found entity 4: MULTIPLYER_GALUA
+    Info: Found entity 5: PROC_XOR
+    Info: Found entity 6: DTRIGGER
+    Info: Found entity 7: SYNDROME_RAM
+    Info: Found entity 8: RS_Locator
+    Info: Found entity 9: TABLE
+Info: Elaborating entity "schema" for the top level hierarchy
+Info: Elaborating entity "Data_Source" for hierarchy "Data_Source:inst"
+Warning (10762): Verilog HDL Case Statement warning at data_source.v(78): can't check case statement for completeness because the case expression has too many possible states
+Info: Elaborating entity "clk_devider" for hierarchy "clk_devider:inst2"
+Info: Elaborating entity "RS_Encoder" for hierarchy "RS_Encoder:inst3"
+Info: Elaborating entity "CONTROLLER" for hierarchy "RS_Encoder:inst3|CONTROLLER:controller"
+Warning (10762): Verilog HDL Case Statement warning at RS_Encoder.v(336): can't check case statement for completeness because the case expression has too many possible states
+Info: Elaborating entity "CLK_INVERTOR" for hierarchy "RS_Encoder:inst3|CLK_INVERTOR:clk_invertor"
+Info: Elaborating entity "FOUR_BIT_REGISTER" for hierarchy "RS_Encoder:inst3|FOUR_BIT_REGISTER:four_bit_reg_1"
+Info: Elaborating entity "GALUA_ADDER" for hierarchy "RS_Encoder:inst3|GALUA_ADDER:Galua_adder_1"
+Info: Elaborating entity "MULTIPLIER_x3" for hierarchy "RS_Encoder:inst3|MULTIPLIER_x3:Multiplier_x3"
+Info: Elaborating entity "MULTIPLIER_x12" for hierarchy "RS_Encoder:inst3|MULTIPLIER_x12:Multiplier_x12"
+Info: Elaborating entity "MULTIPLIER_x15" for hierarchy "RS_Encoder:inst3|MULTIPLIER_x15:Multiplier_x15"
+Info: Elaborating entity "GATE" for hierarchy "RS_Encoder:inst3|GATE:Gate"
+Info: Elaborating entity "DATA_MPX" for hierarchy "RS_Encoder:inst3|DATA_MPX:DataMultiplexor"
+Info: Elaborating entity "Err_Module" for hierarchy "Err_Module:inst11"
+Warning (10762): Verilog HDL Case Statement warning at Gain.v(66): can't check case statement for completeness because the case expression has too many possible states
+Info: Elaborating entity "RS_Decoder" for hierarchy "RS_Decoder:inst1"
+Info: Elaborating entity "D_CONTROLLER" for hierarchy "RS_Decoder:inst1|D_CONTROLLER:dec_controller"
+Warning (10036): Verilog HDL or VHDL warning at RS_Decoder.v(324): object "MR_WE_0" assigned a value but never read
+Warning (10762): Verilog HDL Case Statement warning at RS_Decoder.v(393): can't check case statement for completeness because the case expression has too many possible states
+Info: Elaborating entity "MAIN_RAM" for hierarchy "RS_Decoder:inst1|MAIN_RAM:main_RAM"
+Info: Elaborating entity "MULTIPLYER_GALUA" for hierarchy "RS_Decoder:inst1|MULTIPLYER_GALUA:decode_multiplier"
+Info: Elaborating entity "PROC_XOR" for hierarchy "RS_Decoder:inst1|PROC_XOR:decoderXOR"
+Warning (10036): Verilog HDL or VHDL warning at RS_Decoder.v(2978): object "j" assigned a value but never read
+Info: Elaborating entity "DTRIGGER" for hierarchy "RS_Decoder:inst1|DTRIGGER:Trig0"
+Info: Elaborating entity "SYNDROME_RAM" for hierarchy "RS_Decoder:inst1|SYNDROME_RAM:syndrome_memory"
+Info: Elaborating entity "RS_Locator" for hierarchy "RS_Decoder:inst1|RS_Locator:rsloc"
+Warning (10230): Verilog HDL assignment warning at RS_Decoder.v(3294): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at RS_Decoder.v(3295): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at RS_Decoder.v(3334): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at RS_Decoder.v(3370): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at RS_Decoder.v(3373): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at RS_Decoder.v(3376): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at RS_Decoder.v(3385): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at RS_Decoder.v(3388): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at RS_Decoder.v(3389): truncated value with size 32 to match size of target (4)
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "MUL_Table" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "DIV_Table" into its bus
+Info: Elaborating entity "TABLE" for hierarchy "RS_Decoder:inst1|TABLE:tab1"
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred lpm_counter megafunction (LPM_WIDTH=32) from the following logic: "RS_Decoder:inst1|PROC_XOR:decoderXOR|i[0]~32"
+Info: Inferred 8 megafunctions from design logic
+    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Err_Module:inst11|Add0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "RS_Decoder:inst1|RS_Locator:rsloc|Mod1"
+    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "RS_Decoder:inst1|RS_Locator:rsloc|Add0"
+    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "RS_Decoder:inst1|RS_Locator:rsloc|Add1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "RS_Decoder:inst1|RS_Locator:rsloc|Mod0"
+    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "RS_Decoder:inst1|RS_Locator:rsloc|Add2"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "RS_Decoder:inst1|RS_Locator:rsloc|Mod2"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "RS_Decoder:inst1|RS_Locator:rsloc|Mod3"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|PROC_XOR:decoderXOR|lpm_counter:i_rtl_0"
+Info: Instantiated megafunction "RS_Decoder:inst1|PROC_XOR:decoderXOR|lpm_counter:i_rtl_0" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "32"
+    Info: Parameter "LPM_DIRECTION" = "UP"
+    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|PROC_XOR:decoderXOR|lpm_counter:i_rtl_0|alt_counter_f10ke:wysi_counter", which is child of megafunction instantiation "RS_Decoder:inst1|PROC_XOR:decoderXOR|lpm_counter:i_rtl_0"
+Info: Elaborated megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0"
+Info: Instantiated megafunction "Err_Module:inst11|lpm_add_sub:Add0" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "32"
+    Info: Parameter "LPM_DIRECTION" = "ADD"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
+Info: Elaborated megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0|addcore:adder", which is child of megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "Err_Module:inst11|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod1"
+Info: Instantiated megafunction "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "5"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_ipl.tdf
+    Info: Found entity 1: lpm_divide_ipl
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_4kh.tdf
+    Info: Found entity 1: sign_div_unsign_4kh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_ake.tdf
+    Info: Found entity 1: alt_u_div_ake
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_a9c.tdf
+    Info: Found entity 1: add_sub_a9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_b9c.tdf
+    Info: Found entity 1: add_sub_b9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_c9c.tdf
+    Info: Found entity 1: add_sub_c9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_d9c.tdf
+    Info: Found entity 1: add_sub_d9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_e9c.tdf
+    Info: Found entity 1: add_sub_e9c
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0"
+Info: Instantiated megafunction "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "7"
+    Info: Parameter "LPM_DIRECTION" = "ADD"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1"
+Info: Instantiated megafunction "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_DIRECTION" = "ADD"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0"
+Info: Instantiated megafunction "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "32"
+    Info: Parameter "LPM_WIDTHD" = "32"
+    Info: Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_bao.tdf
+    Info: Found entity 1: lpm_divide_bao
+Info: Found 1 design units, including 1 entities, in source file db/abs_divider_0dg.tdf
+    Info: Found entity 1: abs_divider_0dg
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_cqe.tdf
+    Info: Found entity 1: alt_u_div_cqe
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_rac.tdf
+    Info: Found entity 1: add_sub_rac
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_sac.tdf
+    Info: Found entity 1: add_sub_sac
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_tac.tdf
+    Info: Found entity 1: add_sub_tac
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_uac.tdf
+    Info: Found entity 1: add_sub_uac
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_vac.tdf
+    Info: Found entity 1: add_sub_vac
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_0bc.tdf
+    Info: Found entity 1: add_sub_0bc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_1bc.tdf
+    Info: Found entity 1: add_sub_1bc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_2bc.tdf
+    Info: Found entity 1: add_sub_2bc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_3bc.tdf
+    Info: Found entity 1: add_sub_3bc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_4bc.tdf
+    Info: Found entity 1: add_sub_4bc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_5bc.tdf
+    Info: Found entity 1: add_sub_5bc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_6bc.tdf
+    Info: Found entity 1: add_sub_6bc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_7bc.tdf
+    Info: Found entity 1: add_sub_7bc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_8bc.tdf
+    Info: Found entity 1: add_sub_8bc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_9bc.tdf
+    Info: Found entity 1: add_sub_9bc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_abc.tdf
+    Info: Found entity 1: add_sub_abc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_bbc.tdf
+    Info: Found entity 1: add_sub_bbc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_cbc.tdf
+    Info: Found entity 1: add_sub_cbc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_dbc.tdf
+    Info: Found entity 1: add_sub_dbc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_ebc.tdf
+    Info: Found entity 1: add_sub_ebc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_fbc.tdf
+    Info: Found entity 1: add_sub_fbc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_gbc.tdf
+    Info: Found entity 1: add_sub_gbc
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_f9c.tdf
+    Info: Found entity 1: add_sub_f9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_g9c.tdf
+    Info: Found entity 1: add_sub_g9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_h9c.tdf
+    Info: Found entity 1: add_sub_h9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_i9c.tdf
+    Info: Found entity 1: add_sub_i9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_qac.tdf
+    Info: Found entity 1: add_sub_qac
+Info: Found 1 design units, including 1 entities, in source file db/lpm_abs_sg9.tdf
+    Info: Found entity 1: lpm_abs_sg9
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_l2f.tdf
+    Info: Found entity 1: add_sub_l2f
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2"
+Info: Instantiated megafunction "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "4"
+    Info: Parameter "LPM_DIRECTION" = "ADD"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2|addcore:adder", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add2"
+Info: Elaborated megafunction instantiation "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod2"
+Info: Instantiated megafunction "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod2" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "32"
+    Info: Parameter "LPM_WIDTHD" = "32"
+    Info: Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info: Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Warning: Ignored 79 CARRY_SUM primitives
+    Warning: Ignored 27 CARRY_SUM primitives -- cannot place fan-in logic in single logic cell
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[29]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[28]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~81" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[28]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[27]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[27]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[26]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[26]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[25]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[25]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[24]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[24]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[23]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[23]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[22]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[22]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[21]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[21]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[20]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[20]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[19]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[19]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[18]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[18]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[17]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[17]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[16]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[16]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[15]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[15]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[14]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[14]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[13]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[13]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[12]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[12]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[11]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[11]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[10]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[10]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[9]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[9]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[8]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[8]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[7]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[7]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[6]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[6]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[5]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[5]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[4]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[3]" in single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[5]~272" of type CARRY_SUM
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[2]" of type CARRY_SUM
+    Warning: Ignored 52 CARRY_SUM primitive(s) -- cannot place fan-out logic in single logic cell
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]~48" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]~51" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~72" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~75" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~54" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~57" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~60" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~63" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~66" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~69" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[4]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[5]~1004" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[5]~1008" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[2]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[3]~317" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[3]~320" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[3]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[4]~1012" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[4]~1016" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[1]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[2]~323" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[2]~326" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[0]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[1]~329" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[1]~332" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[2]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[3]~1020" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[3]~1024" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[1]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[2]~1028" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[2]~1032" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[0]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[1]~808" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[1]~812" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~334" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[29]~804" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[28]~824" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~335" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~336" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[27]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~212" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~214" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[26]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[27]~220" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[27]~222" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[25]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[26]~224" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[26]~226" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[24]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[25]~228" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[25]~230" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[23]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[24]~232" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[24]~234" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[22]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[23]~236" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[23]~238" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[21]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[22]~240" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[22]~242" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[20]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[21]~244" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[21]~246" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[19]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[20]~248" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[20]~250" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[18]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[19]~252" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[19]~254" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[17]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[18]~256" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[18]~258" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[16]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[17]~260" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[17]~262" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[15]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[16]~264" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[16]~266" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[14]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[15]~268" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[15]~270" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[13]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[14]~272" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[14]~274" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[12]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[13]~276" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[13]~278" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[11]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[12]~280" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[12]~282" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[10]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[11]~284" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[11]~286" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[9]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[10]~288" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[10]~290" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[8]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[9]~292" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[9]~294" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[7]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[8]~296" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[8]~298" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[6]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[7]~300" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[7]~302" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[5]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[6]~304" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[6]~306" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[4]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[5]~308" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[5]~310" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~81" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]~51" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[6]~48" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~82" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~83" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~47" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~49" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~59" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[4]~63" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~67" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[3]~71" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~75" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]~79" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[5]~272" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[3]~320" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[3]~317" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|result_tmp[5]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|result_tmp[5]~12" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|result_tmp[5]~13" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|result_tmp[4]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[5]~258" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[5]~262" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|result_tmp[3]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[4]~266" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[4]~270" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|result_tmp[2]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[3]~229" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[3]~233" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|result_tmp[1]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[2]~237" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[2]~241" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[0]" into a single logic cell
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[1]~245" of type LUT
+            Warning: Node "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|lpm_abs_sg9:my_abs_num|cs1a[1]~249" of type LUT
+Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
+    Info: Register "RS_Decoder:inst1|D_CONTROLLER:dec_controller|SR_ADR[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "RS_Decoder:inst1|D_CONTROLLER:dec_controller|SR_ADR[2]" lost all its fanouts during netlist optimizations.
+Info: Found the following redundant logic cells in design
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~212"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[28]~214"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[0]~216"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[0]~218"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[0]~814"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_ebc:add_sub_29|add_sub_cella[0]~816"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~43"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node|cs_buffer[1]~45"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[27]~220"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[27]~222"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~47"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node|cs_buffer[5]~49"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[26]~224"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[26]~226"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[25]~228"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[25]~230"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[24]~232"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[24]~234"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[23]~236"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[23]~238"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[22]~240"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[22]~242"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[21]~244"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[21]~246"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[20]~248"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[20]~250"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[19]~252"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[19]~254"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[18]~256"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[18]~258"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[17]~260"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[17]~262"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[16]~264"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[16]~266"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[15]~268"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[15]~270"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[14]~272"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[14]~274"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[13]~276"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[13]~278"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[12]~280"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[12]~282"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[11]~284"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[11]~286"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[10]~288"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[10]~290"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[9]~292"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[9]~294"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[8]~296"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[8]~298"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[7]~300"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[7]~302"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[6]~304"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[6]~306"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[5]~308"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[5]~310"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[4]~312"
+    Info (17048): Logic cell "RS_Decoder:inst1|RS_Locator:rsloc|lpm_divide:Mod0|lpm_divide_bao:auto_generated|abs_divider_0dg:divider|alt_u_div_cqe:divider|add_sub_dbc:add_sub_28|add_sub_cella[4]~314"
+Info: Implemented 2432 device resources after synthesis - the final resource count might be different
+    Info: Implemented 3 input pins
+    Info: Implemented 73 output pins
+    Info: Implemented 2356 logic cells
+Info: Generated suppressed messages file D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/RS_11_15_coder_decoder_refactored.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 257 warnings
+    Info: Peak virtual memory: 244 megabytes
+    Info: Processing ended: Tue Apr 12 15:04:26 2016
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:09
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Altera_QuartusII/Quartus8_1/quartus/RS_codek_refactored/RS_11_15_coder_decoder_refactored.map.smsg.
+
+
